@@ -1,0 +1,8 @@
+type Query {
+    gameHello:String
+}
+
+type Game{
+    _id:ID
+    title:String
+}

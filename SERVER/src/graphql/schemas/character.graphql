@@ -1,0 +1,36 @@
+type Query{
+    getCharacters:[Character],
+    getCharacter(_id:ID!):Character
+}
+
+type Mutation{
+    createCharacter(character:NewCharacterInput!):String!
+}
+
+type Character{
+    _id:ID
+    name:String
+    race:Race
+    gender:Gender
+    games:[Game]
+    image:String
+}
+
+enum Race{
+    HYLIAN
+    GERUDO
+    FAIRY
+}
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
+input NewCharacterInput{
+    name:String!
+    race:Race!
+    gender:Gender!
+    games:[String!]!
+    image:String!
+}
